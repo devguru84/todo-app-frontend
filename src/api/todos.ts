@@ -3,7 +3,7 @@ import { getAuthToken } from "./auth";
 import { GetTodosResponse } from "@/types/todo";
 
 const API_BASE_URL =
-  "https://6oa5hz3pnd.execute-api.us-east-2.amazonaws.com/v0";
+  "https://rsfut91l71.execute-api.us-east-2.amazonaws.com/prod";
 
 export const fetchTodos = async () => {
   try {
@@ -13,6 +13,7 @@ export const fetchTodos = async () => {
       {
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
       },
     );
@@ -40,6 +41,7 @@ export const createTodo = async (value: string) => {
       {
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
       },
     );
